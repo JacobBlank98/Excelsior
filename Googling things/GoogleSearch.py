@@ -1,7 +1,7 @@
 import os, tempfile
 from google_images_search import GoogleImagesSearch
 
-CurrentPath = os.getcwd()
+CurrentPath = str(os.getcwd())
 
 # if you don't enter api key and cx, the package will try to search
 # them from environment variables GCS_DEVELOPER_KEY and GCS_CX
