@@ -19,7 +19,7 @@ _search_params = {
     'num': 1,
     'safe': '',
     'fileType': 'jpg',
-    'imgType': '',
+    'imgType': 'photo',
     'imgSize': '',
     'imgDominantColor': ''
 }
