@@ -1,21 +1,19 @@
-import tweepy
-
-# Authorization Tokens
-access_token = '1858668422-cQsfg6zTjRXnMErfbVkPTBQfRpz3wA0HTWbjUUB'
-access_token_secret = 'pWrVpJvGQB37p24e62e4oDNMopYYTqv6WgWkft5K6z1dR'
-consumer_key = 'pfoaSCz63ceQQWHoEJY3MEjAA'
-consumer_secret = 'siPmdQLwDrJN8RTkuf4tals7HFIAwnkjpmKLAXLnLAJGqIgEfg'
-
-
-# Authenticate to Twitter
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_token_secret)
-
-# Create API object
-api = tweepy.API(auth)
-
-
 def post_image_and_caption():
+    import tweepy
+
+    # Authorization Tokens
+    access_token = '1858668422-cQsfg6zTjRXnMErfbVkPTBQfRpz3wA0HTWbjUUB'
+    access_token_secret = 'pWrVpJvGQB37p24e62e4oDNMopYYTqv6WgWkft5K6z1dR'
+    consumer_key = 'pfoaSCz63ceQQWHoEJY3MEjAA'
+    consumer_secret = 'siPmdQLwDrJN8RTkuf4tals7HFIAwnkjpmKLAXLnLAJGqIgEfg'
+
+    # Authenticate to Twitter
+    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+    auth.set_access_token(access_token, access_token_secret)
+
+    # Create API object
+    api = tweepy.API(auth)
+    
     image = str(input("What's the image file path?"))
     caption = str(input("What's the caption?"))
 
