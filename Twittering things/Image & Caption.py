@@ -25,4 +25,8 @@ def post_image_and_caption(image, caption):
 
 
 if __name__ == "__main__":
-    post_image_and_caption()
+
+    #Using function independently
+    image = input("input an image path")
+    caption = input("Write a Caption")
+    post_image_and_caption(image, caption)
