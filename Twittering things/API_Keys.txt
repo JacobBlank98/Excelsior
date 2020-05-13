@@ -1,3 +1,5 @@
-Twitter Bot:
-  API key: pfoaSCz63ceQQWHoEJY3MEjAA
-  API secret key: siPmdQLwDrJN8RTkuf4tals7HFIAwnkjpmKLAXLnLAJGqIgEfg
+# Twitter Authorization Tokens
+access_token = '1858668422-cQsfg6zTjRXnMErfbVkPTBQfRpz3wA0HTWbjUUB'
+access_token_secret = 'pWrVpJvGQB37p24e62e4oDNMopYYTqv6WgWkft5K6z1dR'
+consumer_key = 'pfoaSCz63ceQQWHoEJY3MEjAA'
+consumer_secret = 'siPmdQLwDrJN8RTkuf4tals7HFIAwnkjpmKLAXLnLAJGqIgEfg'
