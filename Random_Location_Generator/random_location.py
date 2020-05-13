@@ -1,7 +1,7 @@
 import pandas as pd
 import random
 
-data = pd.read_csv("world-cities_csv.csv")
+data = pd.read_csv("world-cities.csv")
 
 
 def random_location():
