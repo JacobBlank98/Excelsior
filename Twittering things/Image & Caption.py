@@ -1,4 +1,7 @@
-def post_image_and_caption():
+# image = image file_path
+# caption = image caption
+
+def post_image_and_caption(image, caption):
     import tweepy
 
     # Authorization Tokens
@@ -12,11 +15,6 @@ def post_image_and_caption():
     auth.set_access_token(access_token, access_token_secret)
 
     # Create API object
-    api = tweepy.API(auth)
-    
-    image = str(input("What's the image file path?"))
-    caption = str(input("What's the caption?"))
-
     api = tweepy.API(auth)
 
     # Upload image
