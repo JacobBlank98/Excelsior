@@ -5,25 +5,21 @@ from google_images_search import GoogleImagesSearch
 #Google and download a picture
 def GetGoogleImage(query, PathToDownload):
  
-    if len(os.listdir(PathToDownload) ) == 0:
-        print("Directory is empty")
-    else:
-        
-        gis = GoogleImagesSearch('AIzaSyBAcmq00cLgRfvmYsasuaqmuqKhe0HN6KI ', '004157383614410840261:hcpju7llgou')
-        
-        # define search params:
-        _search_params = {
-            'q': query,
-            'num': 1,
-            'safe': '',
-            'fileType': 'jpg',
-            'imgType': 'photo',
-            'imgSize': '',
-            'imgDominantColor': ''
-        }
-        
-        # this will search, download and resize:
-        gis.search(search_params=_search_params, path_to_dir= PathToDownload, width=1000, height=500)
+    gis = GoogleImagesSearch('AIzaSyBAcmq00cLgRfvmYsasuaqmuqKhe0HN6KI ', '004157383614410840261:hcpju7llgou')
+    
+    # define search params:
+    _search_params = {
+        'q': query,
+        'num': 1,
+        'safe': '',
+        'fileType': 'jpg',
+        'imgType': 'photo',
+        'imgSize': '',
+        'imgDominantColor': ''
+    }
+    
+    # this will search, download and resize:
+    gis.search(search_params=_search_params, path_to_dir= PathToDownload)
 
 #Remove The file
 def DeleteImage(imagePath):
