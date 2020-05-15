@@ -2,6 +2,20 @@ import os
 from PIL import Image 
  
  
+def ResizeTopPicture(TopImagePath, BottomImagePath, ResizedSavePath):
+    
+    BottomImage = Image.open(BottomImagePath)
+    TopImage = Image.open(TopImagePath)
+    
+    BottomWidth, BottomHeight = BottomImage.size
+    OldWidth, OldHeight = TopImage.size
+    
+    NewHeight = int(BottomHeight / 3)
+    NewWidth = int(NewHeight * (OldWidth / OldHeight))
+    
+    NewTopImage = TopImage.resize((NewWidth, NewHeight))
+    NewTopImage.save(ResizedSavePath)
+ 
  
 def CopyPaste(TopImagePath, BottomImagePath, SavePath):
 
@@ -36,4 +50,5 @@ if __name__ == "__main__":
     elif os.path.isfile(BottomImagePath) == 0:
         print("BottomImagePath Directory does not exist")
     
-    CopyPaste(TopImagePath, BottomImagePath, SavePath)
+    # CopyPaste(TopImagePath, BottomImagePath, SavePath)
+    ResizeTopPicture(TopImagePath, BottomImagePath, SavePath)
