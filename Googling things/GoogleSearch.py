@@ -7,6 +7,8 @@ def GetGoogleImage(query, PathToDownload):
  
     gis = GoogleImagesSearch('AIzaSyBAcmq00cLgRfvmYsasuaqmuqKhe0HN6KI ', '004157383614410840261:hcpju7llgou')
     
+    # GSImage gsImage
+    
     # define search params:
     _search_params = {
         'q': query,
@@ -19,8 +21,12 @@ def GetGoogleImage(query, PathToDownload):
     }
     
     # this will search, download and resize:
-    gis.search(search_params=_search_params, path_to_dir= PathToDownload)
-
+    gis.search(search_params=_search_params, path_to_dir = PathToDownload)
+    for image in gis.results():
+        print(" \n" + image.path)
+        return image.path  
+        
+    
 #Remove The file
 def DeleteImage(imagePath):
     try:
