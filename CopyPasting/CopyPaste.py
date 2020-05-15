@@ -31,7 +31,7 @@ def CopyPaste(TopImagePath, BottomImagePath, SavePath):
     pasteHeight = int(BottomHeight - TopHeight)
     
     # paste image giving dimensions 
-    BottomImageCopy.paste(TopImageCopy, (pasteWidth, pasteHeight)) 
+    BottomImageCopy.paste(TopImageCopy, (pasteWidth, pasteHeight), mask=TopImageCopy) 
     
     # save the image  
     BottomImageCopy.save(SavePath) 
