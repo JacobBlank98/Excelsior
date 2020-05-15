@@ -1,5 +1,5 @@
 import pandas as pd
-import random
+import random, os 
 
 
 def random_location():
