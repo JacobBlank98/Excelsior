@@ -6,7 +6,6 @@ from CopyPasting import ResizeTopPicture, CopyPaste
 # User Inputs for file/image paths
 City_Path = input("Enter directory of file to save background/city photos to.")
 Troy_Abed_Path = input("Enter directory of file to save foreground/TroyAbed")
-# photos to.")
 Resized_Path = input("Enter absolute path for resized image.")
 Merged_Path = input("Enter absolute path for merged image.")
 
