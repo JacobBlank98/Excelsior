@@ -1,4 +1,4 @@
-from GoogleSearch import GetGoogleImage, DeleteImage, return_absolute_image_reference
+from GoogleSearch import GetGoogleImage, DeleteImage
 from Image_and_Caption import post_image_and_caption
 from random_location import random_location, random_image_path
 from CopyPaste import ResizeTopPicture, CopyPaste
