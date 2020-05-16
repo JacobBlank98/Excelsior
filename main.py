@@ -25,6 +25,6 @@ CopyPaste(top_image_path, bottom_image_path, Merged_Path)
 post_image_and_caption(image=Merged_Path, caption=caption)
 
 # deleting images
-DeleteImage(imagePath=City_Path)
+DeleteImage(imagePath=bottom_image_path)
 DeleteImage(imagePath=Resized_Path)
 DeleteImage(imagePath=Merged_Path)
