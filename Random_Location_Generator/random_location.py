@@ -10,7 +10,7 @@ def random_location():
 
 def random_image_path(file_directory):
     choice = random.choice(os.listdir(str(file_directory)))
-    image_path = file_directory + choice
+    image_path = file_directory + '/' + choice
     return image_path
 
 if __name__ == "__main__":
