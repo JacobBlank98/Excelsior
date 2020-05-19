@@ -1,13 +1,15 @@
-from GoogleSearch import GetGoogleImage, DeleteImage
-from Image_and_Caption import post_image_and_caption
-from random_location import random_location, random_image_path
-from CopyPaste import ResizeTopPicture, CopyPaste
+import os
+from PIL import Image 
+from Googling.GoogleSearch import GetGoogleImage, DeleteImage
+from Twitter.Image_and_Caption import post_image_and_caption
+from Random_Location_Generator.random_location import random_location, random_image_path
+from CopyPasting.CopyPaste import ResizeTopPicture, CopyPaste
 
 # User Inputs for file/image paths
-City_Path = input("Enter directory of file to save background/city photos to.")
-Troy_Abed_Path = input("Enter directory of file to save foreground/TroyAbed")
-Resized_Path = input("Enter absolute path for resized image.")
-Merged_Path = input("Enter absolute path for merged image.")
+City_Path = ".\temp"
+Troy_Abed_Path = ".\TroyandAbedPics"
+Resized_Path = ".\temp\Resized.jpg"
+Merged_Path = ".\temp\MergedPic.jpg"
 
 # Google Query
 query = random_location()  # random city name
@@ -15,6 +17,7 @@ caption = ("Troy and Abed telepoooorting! This time to {}.".format(query))  # ca
 
 # top & bottom Images
 bottom_image_path = GetGoogleImage(query, PathToDownload=City_Path)
+print(bottom_image_path)
 top_image_path = random_image_path(Troy_Abed_Path)
 
 # resizing and merging
