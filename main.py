@@ -9,10 +9,10 @@ import os
 cwd = os.getcwd()
 
 # User Inputs for file/image paths
-City_Path = "{}\temp".format(cwd)
-Troy_Abed_Path = "{}\TroyandAbedPics".format(cwd)
-Resized_Path = "{}\temp\Resized.jpg".format(cwd)
-Merged_Path = "{}\temp\MergedPic.jpg".format(cwd)
+City_Path = "{}/temp".format(cwd)
+Troy_Abed_Path = "{}/TroyandAbedPics".format(cwd)
+Resized_Path = "{}/temp/Resized.jpg".format(cwd)
+Merged_Path = "{}/temp/MergedPic.jpg".format(cwd)
 
 # Google Query
 query = random_location()  # random city name
