@@ -3,7 +3,7 @@ import random
 
 
 def random_location():
-    data = pd.read_csv("world-cities.csv")
+    data = pd.read_csv("Random_Location_Generator/world-cities.csv")
     index = random.choice(range(len(data)))
     complete_name = str(data['name'][index]) + ' city, ' + str(data['country'][index])
     return complete_name
