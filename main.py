@@ -5,11 +5,14 @@ from Twitter.Image_and_Caption import post_image_and_caption
 from Random_Location_Generator.random_location import random_location, random_image_path
 from CopyPasting.CopyPaste import ResizeTopPicture, CopyPaste
 
+import os
+cwd = os.getcwd()
+
 # User Inputs for file/image paths
-City_Path = ".\temp"
-Troy_Abed_Path = ".\TroyandAbedPics"
-Resized_Path = ".\temp\Resized.jpg"
-Merged_Path = ".\temp\MergedPic.jpg"
+City_Path = "{}\temp".format(cwd)
+Troy_Abed_Path = "{}\TroyandAbedPics".format(cwd)
+Resized_Path = "{}\temp\Resized.jpg".format(cwd)
+Merged_Path = "{}\temp\MergedPic.jpg".format(cwd)
 
 # Google Query
 query = random_location()  # random city name
