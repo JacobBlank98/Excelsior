@@ -1,5 +1,6 @@
 import os, tempfile
 from google_images_search import GoogleImagesSearch
+from Random_Location_Generator.random_location import random_location
 
 
 # Google and download a picture
@@ -21,12 +22,13 @@ def GetGoogleImage(query, PathToDownload):
 
     # this will search, download and resize:
     gis.search(search_params=_search_params, path_to_dir=PathToDownload)
-    for image in gis.results():
-        if not gis.results():        
-            print("image did not download")
-            GetGoogleImage(query, PathToDownload)
-        return image.path
 
+    if len(gis.results()) == 0:
+        print("Image from GetGoogleImage() did not download. Trying different query.")
+        query = random_location()
+        GetGoogleImage(query, PathToDownload)
+    else:
+        return gis.results()[0].path, query
 
 # Remove The file
 def DeleteImage(imagePath):
