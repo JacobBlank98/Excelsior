@@ -9,7 +9,7 @@ from CopyPasting.CopyPaste import ResizeTopPicture, CopyPaste
 cwd = os.getcwd()
 City_Path = "{}/temp".format(cwd)
 Troy_Abed_Path = "{}/TroyandAbedPics".format(cwd)
-Resized_Path = "{}/temp/Resized.jpg".format(cwd)
+Resized_Path = "{}/temp/Resized.png".format(cwd)
 Merged_Path = "{}/temp/MergedPic.jpg".format(cwd)
 
 # Google Query
@@ -19,17 +19,18 @@ caption = ("Troy and Abed telepoooorting! This time to {}.".format(modified_quer
 
 # top & bottom Images
 bottom_image_path = GetGoogleImage(query, PathToDownload=City_Path)
-print(bottom_image_path)
 top_image_path = random_image_path(Troy_Abed_Path)
 
 # resizing and merging
 ResizeTopPicture(top_image_path, bottom_image_path, Resized_Path)
-CopyPaste(top_image_path, bottom_image_path, Merged_Path)
+CopyPaste(Resized_Path, bottom_image_path, Merged_Path)
 
 # posting
 post_image_and_caption(image=Merged_Path, caption=caption)
 
 # deleting images
-DeleteImage(imagePath=bottom_image_path)
-DeleteImage(imagePath=Resized_Path)
-DeleteImage(imagePath=Merged_Path)
+os.remove(bottom_image_path)
+os.remove(Resized_Path)
+os.remove(Merged_Path)
+os.rmdir(City_Path)
+

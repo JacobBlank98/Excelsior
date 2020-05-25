@@ -3,7 +3,6 @@ from PIL import Image
  
  
 def ResizeTopPicture(TopImagePath, BottomImagePath, ResizedSavePath):
-
     BottomImage = Image.open(BottomImagePath)
     TopImage = Image.open(TopImagePath)
 
@@ -14,29 +13,28 @@ def ResizeTopPicture(TopImagePath, BottomImagePath, ResizedSavePath):
     NewWidth = int(NewHeight * (OldWidth / OldHeight))
 
     NewTopImage = TopImage.resize((NewWidth, NewHeight))
-    NewTopImage = TopImage.convert("RGB")
+    NewTopImage = TopImage.convert("RGBA")
     NewTopImage.save(ResizedSavePath)
- 
- 
-def CopyPaste(TopImagePath, BottomImagePath, SavePath):
 
+
+def CopyPaste(TopImagePath, BottomImagePath, SavePath):
     # open the images, get their sizes and make a copies so they're not affected
-    TopImage = Image.open(TopImagePath) 
-    TopImageCopy = TopImage.copy() 
-    TopWidth, TopHeight = TopImage.size   
-    BottomImage = Image.open(BottomImagePath) 
+    TopImage = Image.open(TopImagePath)
+    TopImageCopy = TopImage.copy()
+    TopWidth, TopHeight = TopImage.size
+    BottomImage = Image.open(BottomImagePath)
     BottomWidth, BottomHeight = BottomImage.size
-    BottomImageCopy = BottomImage.copy() 
+    BottomImageCopy = BottomImage.copy()
 
     pasteWidth = int((BottomWidth / 2) - (TopWidth / 2))
     pasteHeight = int(BottomHeight - TopHeight)
-    
-    # paste image giving dimensions 
-    BottomImageCopy.paste(TopImageCopy, (pasteWidth, pasteHeight), mask=TopImageCopy) 
-    
-    # save the image  
-    BottomImageCopy.save(SavePath) 
 
+    # paste image giving dimensions 
+    BottomImageCopy.paste(TopImageCopy, (pasteWidth, pasteHeight), mask=TopImageCopy)
+
+    # save the image  
+    BottomImageCopy.convert("RGB")
+    BottomImageCopy.save(SavePath)
 
 
 
