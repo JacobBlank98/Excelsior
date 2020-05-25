@@ -3,17 +3,18 @@ from PIL import Image
  
  
 def ResizeTopPicture(TopImagePath, BottomImagePath, ResizedSavePath):
-    
+
     BottomImage = Image.open(BottomImagePath)
     TopImage = Image.open(TopImagePath)
-    
+
     BottomWidth, BottomHeight = BottomImage.size
     OldWidth, OldHeight = TopImage.size
-    
+
     NewHeight = int(BottomHeight / 3)
     NewWidth = int(NewHeight * (OldWidth / OldHeight))
-    
+
     NewTopImage = TopImage.resize((NewWidth, NewHeight))
+    NewTopImage = TopImage.convert("RGB")
     NewTopImage.save(ResizedSavePath)
  
  
