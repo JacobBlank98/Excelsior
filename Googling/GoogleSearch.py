@@ -22,7 +22,9 @@ def GetGoogleImage(query, PathToDownload):
     # this will search, download and resize:
     gis.search(search_params=_search_params, path_to_dir=PathToDownload)
     for image in gis.results():
-        print(" \n" + image.path)
+        if not gis.results():        
+            print("image did not download")
+            GetGoogleImage(query, PathToDownload)
         return image.path
 
 
