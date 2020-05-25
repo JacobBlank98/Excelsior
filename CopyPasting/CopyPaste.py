@@ -13,7 +13,7 @@ def ResizeTopPicture(TopImagePath, BottomImagePath, ResizedSavePath):
     NewWidth = int(NewHeight * (OldWidth / OldHeight))
 
     NewTopImage = TopImage.resize((NewWidth, NewHeight))
-    NewTopImage = TopImage.convert("RGBA")
+    NewTopImage = NewTopImage.convert("RGBA")
     NewTopImage.save(ResizedSavePath)
 
 
@@ -33,7 +33,6 @@ def CopyPaste(TopImagePath, BottomImagePath, SavePath):
     BottomImageCopy.paste(TopImageCopy, (pasteWidth, pasteHeight), mask=TopImageCopy)
 
     # save the image  
-    BottomImageCopy.convert("RGB")
     BottomImageCopy.save(SavePath)
 
 
