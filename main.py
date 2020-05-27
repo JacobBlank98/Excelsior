@@ -6,7 +6,7 @@ from CopyPasting.CopyPaste import ResizeTopPicture, CopyPaste
 
 # file/image paths
 cwd = os.getcwd()
-City_Path = "{}/temp".format(cwd) # may be ../ (two dots instead of one)
+City_Path = "{}/temp".format(cwd) 
 Troy_Abed_Path = "{}/TroyandAbedPics".format(cwd)
 Resized_Path = "{}/temp/Resized.png".format(cwd)
 Merged_Path = "{}/temp/MergedPic.jpg".format(cwd)
