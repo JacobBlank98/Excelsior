@@ -4,31 +4,28 @@ from Random_Location_Generator.random_location import random_location
 
 
 # Google and download a picture
-def GetGoogleImage(query, PathToDownload):
+def GetGoogleImage(PathToDownload):
+
     gis = GoogleImagesSearch('AIzaSyBAcmq00cLgRfvmYsasuaqmuqKhe0HN6KI ', '004157383614410840261:hcpju7llgou')
 
     # GSImage gsImage
 
-    # define search params:
-    _search_params = {
-        'q': query,
-        'num': 1,
-        'safe': '',
-        'fileType': 'jpg',
-        'imgType': 'photo',
-        'imgSize': '',
-        'imgDominantColor': ''
-    }
-
     # this will search, download and resize:
-    gis.search(search_params=_search_params, path_to_dir=PathToDownload)
+    while len(gis.results()) == 0:
+        question = random_location()
+        # define search params:
+        _search_params = {
+            'q': question,
+            'num': 1,
+            'safe': '',
+            'fileType': 'jpg',
+            'imgType': 'photo',
+            'imgSize': '',
+            'imgDominantColor': ''
+        }
+        gis.search(search_params=_search_params, path_to_dir=PathToDownload)
 
-    if len(gis.results()) == 0:
-        print("Image from GetGoogleImage() did not download. Trying different query.")
-        query = random_location()
-        GetGoogleImage(query, PathToDownload)
-    else:
-        return gis.results()[0].path, query
+    return gis.results()[0].path, question
 
 # Remove The file
 def DeleteImage(imagePath):
@@ -42,11 +39,10 @@ def DeleteImage(imagePath):
 # Use Functionality independently
 if __name__ == "__main__":
 
-    query = input("What image do you want to download?")
     PathToDownload = input("Where should I download?")
 
     if os.path.isdir(PathToDownload) == 0:
         print("That's not a directory!")
     else:
-        GetGoogleImage(query, PathToDownload)      
+        GetGoogleImage(PathToDownload)      
   
