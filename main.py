@@ -5,11 +5,10 @@ from Random_Location_Generator.random_location import random_location, random_im
 from CopyPasting.CopyPaste import ResizeTopPicture, CopyPaste
 
 # file/image paths
-cwd = os.getcwd()
-City_Path = "{}/temp".format(cwd) 
-Troy_Abed_Path = "{}/TroyandAbedPics".format(cwd)
-Resized_Path = "{}/temp/Resized.png".format(cwd)
-Merged_Path = "{}/temp/MergedPic.jpg".format(cwd)
+City_Path = "../temp" 
+Troy_Abed_Path = "../TroyandAbedPics"
+Resized_Path = "../temp/Resized.png"
+Merged_Path = "../temp/MergedPic.jpg"
 
 # top & bottom Images
 bottom_image_path, query = GetGoogleImage(PathToDownload=City_Path)
