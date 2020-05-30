@@ -5,10 +5,10 @@ def post_image_and_caption(image, caption):
     import tweepy
 
     # Authorization Tokens
-    access_token = '1858668422-cQsfg6zTjRXnMErfbVkPTBQfRpz3wA0HTWbjUUB'
-    access_token_secret = 'pWrVpJvGQB37p24e62e4oDNMopYYTqv6WgWkft5K6z1dR'
-    consumer_key = 'pfoaSCz63ceQQWHoEJY3MEjAA'
-    consumer_secret = 'siPmdQLwDrJN8RTkuf4tals7HFIAwnkjpmKLAXLnLAJGqIgEfg'
+    access_token = '1262556492944859136-8IxvNboeBljh2fai0OcZNsam7bCXTb'
+    access_token_secret = 'OGWw8x0joaYIkT2plG7QF8rnFQbgTwRHl0oDIeBDB261C'
+    consumer_key = '1vxukZQuIkjeTgxj7f77GngvK'
+    consumer_secret = 'KPfV1JRvc1FcoVmGkOkZcv5y5CfBT2OGO41m1LoYej6I3bUuUw'
 
     # Authenticate to Twitter
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
